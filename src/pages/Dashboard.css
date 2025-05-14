@@ -1,0 +1,141 @@
+/* src/pages/Dashboard.css */
+.dashboard-wrapper {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-size: 1.75rem;
+  color: #333;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.go-home-btn, .logout-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.go-home-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.go-home-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.logout-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+  transform: translateY(-2px);
+}
+
+.dashboard-content {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-card h2 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.profile-card p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.profile-card p strong {
+  color: #333;
+}
+
+.profile-image {
+  margin-bottom: 1.5rem;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ccc;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    padding: 1rem;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .go-home-btn, .logout-btn {
+    flex: 1;
+  }
+
+  .profile-card {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+}

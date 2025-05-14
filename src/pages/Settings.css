@@ -1,0 +1,187 @@
+/* src/pages/Settings.css */
+.settings-wrapper {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .settings-wrapper.dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  
+  .settings-header.dark-mode {
+    background-color: #444;
+    border-color: #555;
+  }
+  
+  .settings-header h1 {
+    font-size: 1.75rem;
+    color: #333;
+  }
+  
+  .settings-header.dark-mode h1 {
+    color: #fff;
+  }
+  
+  .go-home-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .go-home-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+  }
+  
+  .settings-content {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .settings-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .settings-card.dark-mode {
+    background-color: #444;
+    border-color: #555;
+  }
+  
+  .settings-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .settings-card h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .settings-card.dark-mode h2 {
+    color: #fff;
+  }
+  
+  .setting-section {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .setting-section label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .setting-section.dark-mode label {
+    color: #fff;
+  }
+  
+  .toggle-btn, .action-btn, .logout-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .toggle-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .toggle-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+  }
+  
+  .toggle-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .action-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .action-btn.danger {
+    background-color: #f44336;
+  }
+  
+  .action-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+  }
+  
+  .action-btn.danger:hover {
+    background-color: #d32f2f;
+  }
+  
+  .logout-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .logout-btn:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .settings-wrapper {
+      padding: 1rem;
+    }
+  
+    .settings-header {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+    }
+  
+    .settings-card {
+      max-width: 100%;
+      padding: 1.5rem;
+    }
+  
+    .setting-section {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  
+    .toggle-btn, .action-btn, .logout-btn {
+      width: 100%;
+    }
+  }

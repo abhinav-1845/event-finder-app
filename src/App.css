@@ -1,0 +1,597 @@
+/* Header-related styles (Updated for dark mode fix) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  border: 1px solid #91ee89;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  gap: 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header.dark-mode {
+  background-color: #333 !important;
+  border-color: #555 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.logo h1 {
+  font-size: 1.75rem;
+  color: #333;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.logo.dark-mode h1 {
+  color: #e8f5e9 !important;
+}
+
+.auth-buttons span {
+  font-size: 1rem;
+  color: #333;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.auth-buttons.dark-mode span {
+  color: #e8f5e9 !important;
+}
+
+.header.dark-mode {
+  background-color: #333;
+  border-color: #555;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  color: #4caf50;
+  transition: color 0.3s ease;
+}
+
+.logo h1 {
+  font-size: 1.75rem;
+  color: #59854c; /* Dark green for light mode */
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.header.dark-mode .logo h1 {
+  color: #adf5b3 !important; /* Light green for dark mode */
+}
+
+.search-container {
+  flex: 1;
+  max-width: 300px;
+  margin: 0 1rem;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #56e675;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #4caf50;
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+.search-bar.dark-mode {
+  background-color: #444;
+  color: #fff;
+  border-color: #666;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.auth-buttons span {
+  font-size: 1rem;
+  color: #333;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.header.dark-mode .auth-buttons span {
+  color: #e8f5e9 !important; /* Light green for dark mode */
+}
+
+.profile-btn, .settings-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.profile-btn:hover, .settings-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+/* In App.css or create a separate CSS class */
+.plan-day-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1}
+.plan-day-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.plan-day-btn:hover {
+  background-color: #45a049;
+}
+
+.login-btn, .signup-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.login-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.signup-btn {
+  background-color: #1e90ff;
+  color: white;
+}
+
+.signup-btn:hover {
+  background-color: #0070dd;
+  transform: translateY(-2px);
+}
+
+.search-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #45a049;
+}
+
+/* Hero Section (Updated: No box, just light green background) */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); /* Light green gradient */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(76, 175, 80, 0.15) 0%, transparent 80%);
+  z-index: 0;
+}
+
+.hero h1, .hero p {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #1a3c1a; /* Darker green for contrast */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  transition: color 0.3s ease;
+}
+
+.hero.dark-mode h1 {
+  color: #012004; /* Light green for dark mode */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #2e7d32; /* Medium green */
+  transition: color 0.3s ease;
+}
+
+.hero.dark-mode p {
+  color: #013a11; /* Lighter green for dark mode */
+}
+
+/* Filters Section (Updated: Sleek dropdown design) */
+/* Filters Section (Updated: Match search-btn height and style) */
+.filters {
+  margin: 2rem 0;
+}
+
+.filter-container {
+  display: flex;
+  gap: 1rem; /* Reduced gap to accommodate wider elements */
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+.filter-dropdown {
+  padding: 1rem 2rem 1rem 1rem; /* Adjusted to match search-btn height, preserve arrow */
+  border: 1px solid #4caf50;
+  border-radius: 10px; /* Match search-btn */
+  font-size: 1.2rem; /* Match search-btn (19.2px) */
+  line-height: 1.5; /* Match search-btn */
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  min-width: 200px; /* Match search-btn */
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%234caf50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1rem center; /* Adjusted for larger padding */
+  background-size: 14px; /* Slightly larger arrow */
+  cursor: pointer;
+}
+
+.filter-dropdown:hover {
+  border-color: #2e7d32;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.2);
+  transform: translateY(-3px); /* Match search-btn hover lift */
+}
+
+.filter-dropdown:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+  outline: none;
+}
+
+.filter-dropdown.dark-mode {
+  background-color: #444;
+  color: #e8f5e9;
+  border-color: #66bb6a;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%2366bb6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+}
+
+.location-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem; /* Match search-btn */
+  background: linear-gradient(45deg, #4caf50, #66bb6a);
+  color: white;
+  border: none;
+  border-radius: 10px; /* Match search-btn */
+  font-size: 1.2rem; /* Match search-btn */
+  font-weight: bold;
+  line-height: 1.5; /* Match search-btn */
+  min-width: 200px; /* Match search-btn */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.location-btn:hover {
+  background: linear-gradient(45deg, #45a049, #5cb85c);
+  transform: translateY(-3px); /* Match search-btn */
+  box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
+}
+
+/* Search Button (Unchanged, reference for height) */
+.search-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(45deg, #4caf50, #81c784);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  min-width: 200px;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.search-btn:hover {
+  background: linear-gradient(45deg, #45a049, #7cb342);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
+}
+
+.search-btn:disabled {
+  background: #a5d6a7;
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+
+.search-btn.dark-mode {
+  background: linear-gradient(45deg, #388e3c, #66bb6a);
+  color: #e8f5e9;
+}
+
+.search-btn.dark-mode:hover {
+  background: linear-gradient(45deg, #2e7d32, #5cb85c);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(102, 187, 106, 0.4);
+}
+
+.search-btn.dark-mode:disabled {
+  background: #616161;
+  color: #e8f5e9;
+  opacity: 0.5;
+  transform: none;
+  box-shadow: none;
+}
+
+/* View Toggle Buttons (Updated to match search-btn height) */
+.view-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Reduced gap to accommodate wider buttons */
+  margin: 1.5rem 0;
+}
+
+.view-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem; /* Match search-btn */
+  background-color: #fff;
+  border: 1px solid #4caf50;
+  border-radius: 10px; /* Match search-btn */
+  cursor: pointer;
+  font-size: 1.2rem; /* Match search-btn */
+  font-weight: 600;
+  line-height: 1.5; /* Match search-btn */
+  min-width: 200px; /* Match search-btn */
+  color: #333;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.view-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.2), transparent);
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.view-btn:hover::before {
+  left: 100%;
+}
+
+.view-btn:hover {
+  background-color: #e8f5e9;
+  transform: translateY(-3px); /* Match search-btn */
+  box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4); /* Match search-btn */
+}
+
+.view-btn.active {
+  background: linear-gradient(45deg, #4caf50, #81c784); /* Match search-btn gradient */
+  color: white;
+  border-color: #4caf50;
+  box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4); /* Match search-btn */
+}
+
+.view-btn.dark-mode {
+  background-color: #444;
+  color: #e8f5e9;
+  border-color: #66bb6a;
+}
+
+.view-btn.dark-mode:hover {
+  background-color: #555;
+}
+
+.view-btn.dark-mode.active {
+  background: linear-gradient(45deg, #4caf50, #81c784); /* Match search-btn */
+  color: white;
+}
+/* Events Container (Updated: Fix "No events" text color) */
+.events-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.events-container p {
+  font-size: 1.2rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.events-container.dark-mode p {
+  color: #e8f5e9; /* Light green for visibility in dark mode */
+}
+
+/* Event Card (Refined for minimal design) */
+.event-card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #4caf50;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(76, 175, 80, 0.2);
+}
+
+.event-card.dark-mode {
+  background-color: #444;
+  border-color: #66bb6a;
+}
+
+.event-card h2 {
+  font-size: 1.25rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.event-card.dark-mode h2 {
+  color: #e8f5e9;
+}
+
+.event-card p {
+  font-size: 1rem;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.event-card.dark-mode p {
+  color: #b9f6ca;
+}
+
+.event-card a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.event-card a:hover {
+  color: #2e7d32;
+  text-decoration: underline;
+}
+
+/* General App Styles */
+.App {
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.App.dark-mode {
+  background-color: #222;
+  color: #e8f5e9;
+}
+
+/* Map-specific styles */
+.events-container.map {
+  padding: 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.leaflet-container {
+  height: 500px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #4caf50;
+  background-color: #e8f5e9; /* Light green background for light mode */
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.leaflet-container.dark-mode {
+  background-color: #333; /* Darker background for dark mode */
+  border-color: #66bb6a;
+}
+
+/* Style for map popup content */
+.leaflet-popup-content-wrapper {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.leaflet-popup-content-wrapper.dark-mode {
+  background-color: #444;
+}
+
+.leaflet-popup-content h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.leaflet-popup-content.dark-mode h3 {
+  color: #e8f5e9;
+}
+
+.leaflet-popup-content p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.25rem 0;
+  transition: color 0.3s ease;
+}
+
+.leaflet-popup-content.dark-mode p {
+  color: #b9f6ca;
+}
+
+.leaflet-popup-content a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.leaflet-popup-content a:hover {
+  color: #2e7d32;
+  text-decoration: underline;
+}
