@@ -1,47 +1,72 @@
-require('dotenv').config({ path: __dirname + '/.env' });
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
+const dotenv = require('dotenv');
 
+dotenv.config();
 const app = express();
 app.use(cors());
+app.use(express.json());
 
-const PORT = process.env.PORT || 5000;
-const TICKETMASTER_API_KEY = process.env.TICKETMASTER_API_KEY;
+const SERPAPI_KEY = process.env.SERPAPI_KEY;
 
-console.log("✅ Ticketmaster Key Loaded:", TICKETMASTER_API_KEY);
+// Map frontend categories to SerpApi-compatible terms
+const categoryMap = {
+  concerts: 'concerts',
+  sports: 'sports',
+  theater: 'theater',
+  festivals: 'festivals',
+};
 
 app.get('/api/events', async (req, res) => {
-  const { keyword, city } = req.query;
+  const { keyword, city, date, category } = req.query;
 
-  const params = {
-    apikey: TICKETMASTER_API_KEY,
-    keyword: keyword || 'music',
-    city: city || 'New York',
-    startDateTime: '2025-05-25T00:00:00Z',
-    sort: 'date,asc'
+  // Validate required parameters
+  if (!keyword || !city) {
+    return res.status(400).json({ error: 'Keyword and city are required' });
+  }
+
+  // Format SerpApi query parameters
+  let query = keyword;
+  if (category && categoryMap[category]) {
+    query += ` ${categoryMap[category]}`;
+  }
+  query += ` events in ${city}`;
+
+  const serpParams = {
+    engine: 'google_events',
+    q: query,
+    hl: 'en',
+    api_key: SERPAPI_KEY,
+    location: city,
   };
 
+  // Add date filter if provided (format: YYYY-MM-DD)
+  if (date) {
+    try {
+      const parsedDate = new Date(date);
+      if (isNaN(parsedDate)) throw new Error('Invalid date format');
+      serpParams.start_date = parsedDate.toISOString().split('T')[0];
+    } catch {
+      return res.status(400).json({ error: 'Invalid date format. Use YYYY-MM-DD' });
+    }
+  }
+
   try {
-    const response = await axios.get('https://app.ticketmaster.com/discovery/v2/events.json', {
-      params: params
+    // Fetch events from SerpApi
+    const serpResponse = await axios.get('https://serpapi.com/search.json', {
+      params: serpParams,
     });
 
-    const events = response.data._embedded?.events || [];
+    const events = serpResponse.data.events_results || [];
 
-    console.log(`📦 Fetched ${events.length} events for city: ${city}, keyword: ${keyword}`);
-
-    res.json(events.map(event => ({
-      id: event.id,
-      name: event.name,
-      date: event.dates.start.localDate
-    })));
+    // Return raw SerpApi data without OpenAI processing
+    res.json(events);
   } catch (error) {
-    console.error('❌ Error fetching events from Ticketmaster:', error.response?.data || error.message);
+    console.error('❌ Server Error fetching events:', error.message);
     res.status(500).json({ error: 'Failed to fetch events' });
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-});
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
